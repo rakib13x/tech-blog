@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/footer";
 import { Navbar } from "@/components/shared/navbar";
 
 interface IProps {
@@ -9,6 +10,7 @@ const MainLayout: React.FC<IProps> = ({ children }) => {
     <>
       <Navbar />
       {children}
+      <Footer />
     </>
   );
 };
