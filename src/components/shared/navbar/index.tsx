@@ -1,9 +1,6 @@
 "use client";
-
-import LoginLogoutSwitch from "@/components/ui/login-logout-switch";
 import { ThemeSwitch } from "@/components/ui/theme-switch";
-import WritePostButton from "@/components/ui/write-post-button";
-import { siteConfig } from "@/config/site";
+
 import {
   NavbarBrand,
   NavbarContent,
@@ -16,9 +13,13 @@ import {
 import { link as linkStyles } from "@nextui-org/theme";
 import clsx from "clsx";
 import NextLink from "next/link";
-import NavbarSearchInput from "./navbar-search-input";
+
 import { usePathname } from "next/navigation";
 import { AcmeIcon } from "@/components/icons";
+import NavbarSearchInput from "./navbar-search-input";
+import WritePostButton from "@/components/ui/write-post-button";
+import LoginLogoutSwitch from "@/components/ui/login-logout-switch";
+import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
   const pathName = usePathname();
