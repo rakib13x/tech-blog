@@ -4,8 +4,8 @@ import THDatePicker from "@/components/form/th-date-picker";
 import THForm from "@/components/form/th-from";
 import THInput from "@/components/form/th-input";
 import THSelect from "@/components/form/th-select";
+import { signUpValidationSchema } from "@/schemas/auth.schema";
 
-import { signUpValidationSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@nextui-org/button";
 import { useRouter } from "next/navigation";
@@ -33,41 +33,10 @@ interface IProps {}
 const SignUpForm: React.FC<IProps> = () => {
   const [isPassword, setIsPassword] = useState(true);
   const router = useRouter();
-  const { mutate: registerUser, isPending, data } = useUserRegister();
-
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const formData = new FormData();
-
-    const registerData = {
-      fullName: data.fullName,
-      username: data.username,
-      email: data.email,
-      password: data.password,
-      gender: data.gender,
-      dateOfBirth: data.dateOfBirth,
-    };
-
-    formData.append("data", JSON.stringify(registerData));
-
-    if (data.image.length > 0) {
-      formData.append("image", data.image[0]);
-    }
-
-    registerUser(formData);
-  };
-
-  useEffect(() => {
-    if (!isPending && data?.success) {
-      router.push("/login");
-    }
-  }, [isPending, data, router]);
 
   return (
     <Suspense>
-      <THForm
-        onSubmit={onSubmit}
-        resolver={zodResolver(signUpValidationSchema)}
-      >
+      <THForm resolver={zodResolver(signUpValidationSchema)}>
         <div className="space-y-2 mb-6">
           <THInput
             radius="sm"
@@ -110,14 +79,14 @@ const SignUpForm: React.FC<IProps> = () => {
           />
           <THDatePicker name="dateOfBirth" label="Date of Birth" isRequired />
           <Button
-            isLoading={isPending}
+            // isLoading={isPending}
             type="submit"
             color="primary"
             variant="solid"
             radius="sm"
             className="w-full"
           >
-            {isPending ? "Signing UP..." : "Sign Up"}
+            sign up
           </Button>
         </div>
       </THForm>
