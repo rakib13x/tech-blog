@@ -1,10 +1,9 @@
+import Container from "@/components/ui/container";
 import Link from "next/link";
 import { Divider } from "@nextui-org/divider";
 import SignUpForm from "@/components/modules/auth/signup-form";
 import { Metadata } from "next";
 import SocialLogin from "@/components/modules/auth/social-login";
-
-import Container from "@/components/ui/container";
 import { AcmeIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
