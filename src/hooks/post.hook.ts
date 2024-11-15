@@ -1,9 +1,6 @@
-import {
 
-    createPost,
-   
-  } from "@/services/post";
-  import { useMutation, useQuery } from "@tanstack/react-query";
+  import { createPost } from "@/services/post";
+import { useMutation, useQuery } from "@tanstack/react-query";
   import { toast } from "sonner";
 
   

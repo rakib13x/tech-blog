@@ -11,6 +11,7 @@ import {
   useState,
 } from "react";
 import { getCurrentUser } from "./../services/auth";
+import { TLoggedInUser } from "@/types";
 
 interface IUserProviderValues {
   user: TLoggedInUser | null;
