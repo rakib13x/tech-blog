@@ -21,3 +21,19 @@ export const createPost = async (payload: FormData) => {
   }
 };
 
+
+export const getPostsByUserId = async (userId: string) => {
+  try {
+    const res = await fetch(`${envConfig.baseApi}/posts/users/${userId}`, {
+      next: {
+        tags: ["allPosts"],
+      },
+    });
+
+    return res.json();
+  } catch (err: any) {
+    throw new Error(err?.message);
+  }
+};
+
+
