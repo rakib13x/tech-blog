@@ -4,6 +4,7 @@ export * from "./category.types";
 export * from "./subscription.type";
 export * from "./payment.type";
 export * from "./post.type";
+export * from "./follower.type"
 
 import { SVGProps } from "react";
 
