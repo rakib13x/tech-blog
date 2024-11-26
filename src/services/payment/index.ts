@@ -1,5 +1,6 @@
 "use server"
 import envConfig from "@/config/env.config";
+import axiosInstance from "@/lib/axiosInstance";
 
 
 export const getPaymentInfoByTransactionId = async (transactionId: string) => {
@@ -14,3 +15,13 @@ export const getPaymentInfoByTransactionId = async (transactionId: string) => {
   }
 };
 
+// get all payments
+export const getAllPayments = async () => {
+  try {
+    const res = await axiosInstance.get("/payments?limit=20")
+
+    return res.data;
+  } catch (err: any) {
+    throw new Error(err);
+  }
+}
