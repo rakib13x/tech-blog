@@ -1,5 +1,6 @@
 import DashboardTitle from "@/components/dashboard-title";
-import PaymentsTable from "@/components/payments-table";
+import PaymentsTable from "@/components/payment-table";
+
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
