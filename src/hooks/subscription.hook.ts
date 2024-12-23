@@ -1,5 +1,4 @@
-
-import { subscribePremiumMonthly, TSubscriptionPayload } from "@/services/subscription";
+import { getAllSubscriptions, subscribePremiumMonthly, TSubscriptionPayload } from "@/services/subscription";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 
@@ -25,4 +24,10 @@ export const useSubscribePremiumMonthly = () => {
 
 
 
-
+// get all payments (admin only)
+export const useGetAllSubscriptions = () => {
+  return useQuery({
+    queryKey: ["GET_ALL_SUBSCRIPTIONS"],
+    queryFn: async () => await getAllSubscriptions(),
+  });
+};

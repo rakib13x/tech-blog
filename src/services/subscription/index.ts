@@ -21,3 +21,13 @@ export const subscribePremiumMonthly = async (payload: TSubscriptionPayload) => 
 };
 
 
+// get all subscriptions
+export const getAllSubscriptions = async () => {
+  try {
+    const res = await axiosInstance.get("/subscriptions?limit=20")
+
+    return res.data;
+  } catch (err: any) {
+    throw new Error(err);
+  }
+}
