@@ -1,4 +1,5 @@
 import NavarDropdown from "@/components/ui/navbar-dropdown";
+import AdminSidebar from "@/components/shared/admin-sidebar";
 
 interface IProps {
   children: React.ReactNode;
